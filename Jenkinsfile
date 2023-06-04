@@ -1,5 +1,27 @@
-node {
-    checkout scm
-    def customImage = docker.build("my-image:${env.node:18-alpine}")
-    customImage.push()
+pipeline {
+    agent any
+ 
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/iorgu12/dockjenk.git'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                bat 'go test'
+            }
+        }
+        
+
+        stage('Build') {
+            steps {
+                bat 'go build -o prog.exe prog.go'
+            }
+        }
+        
+
+    }
 }
