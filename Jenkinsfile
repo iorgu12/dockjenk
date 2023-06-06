@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         
-stage('Deploy') {
+stage('Run_remote') {
             steps {
                 script {
                     def remote = [:]
