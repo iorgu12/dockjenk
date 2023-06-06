@@ -8,9 +8,8 @@
                     remote.password = 'loco12'  
                     remote.allowAnyHosts = true   
                     echo 'Deploying....'
-                    sshPut remote: remote, from: 'prog.sh', into: '/home/loco2/lab'
-                    sshCommand remote: remote, command:"chmod +x /home/coco/lab/prog.sh"
-                    sshCommand remote: remote, command:"systemctl start gop.service"
+                    sshCommand remote: remote, command:"docker run -d -p 9090:80 --name server1 nginx:1.0"
+                    sshCommand remote: remote, command:"docker ps"
                     
            
                 }
