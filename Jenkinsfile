@@ -28,6 +28,7 @@ stage('Run_remote') {
                     echo 'Deploying....'
                     sshCommand remote: remote, command:"curl http://172.17.0.2:4444/api"
                     sshCommand remote: remote, command:"echo 'Application is up and running.'"
+                }
                }
             }
         }
