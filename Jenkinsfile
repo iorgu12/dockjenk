@@ -5,6 +5,7 @@ pipeline {
         
 stage('Run_remote') {
             steps {
+                sh'cd / '
                 sh 'cd /home/loco3'
                 sh 'ssh -o StrictHostKeyChecking=no -v -i /home/loco3/key loco2@192.168.81.130'
                 sh'docker run -d my-python-app'
