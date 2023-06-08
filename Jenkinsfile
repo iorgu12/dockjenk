@@ -9,7 +9,7 @@ stage('Run_remote') {
                     def remote = [:]
                     remote.name = 'my-ssh-server'
                     remote.host = '192.168.81.130'
-                    remote.user = 'loco2'
+                    remote.user = 'loco3'
                     remote.password = 'loco12'  
                     remote.allowAnyHosts = true   
                     echo 'Deploying....'
